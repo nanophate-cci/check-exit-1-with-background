@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run: echo "hello wowwaaa"
-      - run: sleep 3 && exit 1
       - run:
           name: Running background after exit fail
-          command: sleep 10 && echo "aaaa"
+          command: sleep 10 && exit 1
           background: true
+      - run: sleep 11 && echo "aaaa"
