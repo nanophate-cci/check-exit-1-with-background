@@ -10,4 +10,7 @@ jobs:
           name: Running background after exit fail
           command: sleep 10 && exit 1
           background: true
-      - run: sleep 20 && echo "aaaa"
+      - run:
+          name: Running background after exit fail
+          command: sleep 2m && echo "aaaa"
+          no_output_timeout: 1m
