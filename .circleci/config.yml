@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: echo "hello wowwaaa"
+      - run: exit 1
+      - run:
+          name: Running background after exit fail
+          command: sleep 10 && echo "aaaa"
+          background: true
